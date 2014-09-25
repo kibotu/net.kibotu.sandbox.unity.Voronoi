@@ -19,6 +19,7 @@ namespace Assets.Voronoi.Demos
         private FortuneVoronoi voronoi;
         private VoronoiGraph graph;
         public InputField AmountOfSites;
+        public Text Cells;
 
         public void Animate(bool isAnimated)
         {
@@ -40,6 +41,8 @@ namespace Assets.Voronoi.Demos
 
         void FixedUpdate()
         {
+            numSites = sites.Count;
+            Cells.text = numSites.ToString();
             if (Input.GetKeyDown(KeyCode.G))
             {
                 Reset();
